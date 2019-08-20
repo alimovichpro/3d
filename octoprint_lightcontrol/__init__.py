@@ -136,9 +136,9 @@ class LightControl(octoprint.plugin.StartupPlugin,
 
         self._logger.debug("Switching Light On Using GPIO: %s" % self.onoffGPIOPin)
         if not self.invertonoffGPIOPin:
-            pin_output=GPIO.HIGH
-        else:
             pin_output=GPIO.LOW
+        else:
+            pin_output=GPIO.HIGH
 
         try:
             GPIO.output(self._gpio_get_pin(self.onoffGPIOPin), pin_output)
@@ -152,9 +152,9 @@ class LightControl(octoprint.plugin.StartupPlugin,
 
         self._logger.debug("Switching Light Off Using GPIO: %s" % self.onoffGPIOPin)
         if not self.invertonoffGPIOPin:
-            pin_output=GPIO.LOW
-        else:
             pin_output=GPIO.HIGH
+        else:
+            pin_output=GPIO.LOW
 
         try:
             GPIO.output(self._gpio_get_pin(self.onoffGPIOPin), pin_output)
